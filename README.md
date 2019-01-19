@@ -1,29 +1,18 @@
-# elawesomeui
+# el-awesome-ui
 
-## Project setup
-```
-npm install
-```
+Flexible UI components based on [element-ui](https://element.eleme.io)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+  
+## Components
+### ela-table
+Table component based on **el-table**
+render table with pre-defined structure, see [example](src/components/ElaTableExamples.vue)
 
-### Compiles and minifies for production
-```
-npm run build
+
+## Install 
+
 ```
 
-### Run your tests
-```
-npm run test
-```
+npm install el-awesome-ui
 
-### Lints and fixes files
 ```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

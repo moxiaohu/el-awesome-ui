@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img src="./assets/logo.png">
+    <div>
+      <p>
+        Here is some <code v-text="'<ela-table></ela-table>'"></code> examples below
+      </p>
+      <ElaTableExamples></ElaTableExamples>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ElaTableExamples from './components/ElaTableExamples.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    ElaTableExamples
   }
 }
 </script>

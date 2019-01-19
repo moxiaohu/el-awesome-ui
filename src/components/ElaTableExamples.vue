@@ -1,0 +1,66 @@
+<template>
+  <div>
+    <ela-table
+      v-bind:structure="structure1"
+      v-bind:dataList="data1"
+      v-on:onClickItem="onClickTableItem($event)"
+    ></ela-table>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "ElaTableExamples",
+  components: {},
+  methods: {
+    onClickTableItem({ index, item, action }) {
+      /* eslint-disable no-console */
+      console.log(`index: ${index}`);
+      console.log(`item json: ${JSON.stringify(item)}`);
+      console.log(`action: ${action}`);
+    }
+  },
+  data() {
+    return {
+      structure1: [
+        {
+          type: "text",
+          label: "内容",
+          config: {
+            key: "content"
+          }
+        },
+        {
+          type: "button",
+          label: "相关操作",
+          config: {
+            text: "删除",
+            action: "delete",
+            type: "danger" // <el-button> type
+          }
+        },
+        {
+          type: "button",
+          label: "相关操作",
+          config: {
+            text: "添加",
+            action: "add",
+            type: "primary" // <el-button> type
+          }
+        }
+      ],
+      data1: [
+        {
+          content: "名称1"
+        },
+        {
+          content: "名称2"
+        }
+      ]
+    };
+  }
+};
+</script>
+
+<style scoped>
+</style>
