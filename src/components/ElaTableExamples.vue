@@ -3,7 +3,7 @@
     <ela-table
       v-bind:structure="structure1"
       v-bind:dataList="data1"
-      v-on:onClickItem="onClickTableItem($event)"
+      v-on:onTableButtonClick="onTableButtonClick($event)"
     ></ela-table>
   </div>
 </template>
@@ -13,11 +13,13 @@ export default {
   name: "ElaTableExamples",
   components: {},
   methods: {
-    onClickTableItem({ index, item, action }) {
+    onTableButtonClick({ index, item, action }) {
       /* eslint-disable no-console */
       console.log(`index: ${index}`);
       console.log(`item json: ${JSON.stringify(item)}`);
       console.log(`action: ${action}`);
+      // handle click events here...
+
     }
   },
   data() {
@@ -32,22 +34,22 @@ export default {
         },
         {
           type: "button",
-          label: "相关操作",
+          label: "操作",
+          config: {
+            text: "添加",
+            action: "add",
+            type: "primary" // <el-button> type
+          }
+        },
+        {
+          type: "button",
+          label: "操作",
           config: {
             text: "删除",
             action: "delete",
             type: "danger" // <el-button> type
           }
         },
-        {
-          type: "button",
-          label: "相关操作",
-          config: {
-            text: "添加",
-            action: "add",
-            type: "primary" // <el-button> type
-          }
-        }
       ],
       data1: [
         {

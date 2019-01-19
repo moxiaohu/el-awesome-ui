@@ -1,12 +1,10 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <div>
-      <p>
-        Here is some <code v-text="'<ela-table></ela-table>'"></code> examples below
-      </p>
+      <h3>
+        <code v-text="'<ela-table>'"></code> examples
+      </h3>
       <ElaTableExamples></ElaTableExamples>
-    </div>
   </div>
 </template>
 
