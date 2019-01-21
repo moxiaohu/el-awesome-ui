@@ -1,7 +1,9 @@
 import elaTable from './table'
+import elaBoard from './board'
 
 const components = [
-    elaTable
+    elaTable,
+    elaBoard
 ]
 
 const install = function(Vue) {
@@ -16,5 +18,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
-  elaTable
+  elaTable,
+  elaBoard
 }

@@ -2,9 +2,14 @@
   <div>
     <ela-table
       v-bind:structure="structure1"
-      v-bind:dataList="data1"
-      v-on:onTableButtonClick="onTableButtonClick($event)"
-    ></ela-table>
+      v-bind:dataList="list.displayedData"
+      v-on:onTableButtonClick="onTableButtonClick($event)"/>
+
+       <el-pagination
+      layout="prev, pager, next"
+      @current-change="onPageChange"
+      :page-size="list.pageSize"
+      :total="list.total"/>
   </div>
 </template>
 
@@ -20,6 +25,13 @@ export default {
       console.log(`action: ${action}`);
       // handle click events here...
 
+    },
+    onPageChange(page) {
+      console.log(page)
+
+      this.list.page = page
+      this.list.displayedData = this.list.data.slice((this.list.page - 1) * this.list.pageSize,
+            this.list.page * this.list.pageSize)
     }
   },
   data() {
@@ -51,15 +63,42 @@ export default {
           }
         },
       ],
-      data1: [
+      list: {
+          total: 0,
+          pageSize: 4,
+          page: 1,
+          data: [],
+          displayedData: [],
+        }
+    };
+  },
+   mounted() {
+     const apiResponseData = [
         {
           content: "名称1"
         },
         {
           content: "名称2"
+        },
+        {
+          content: "名称3"
+        },
+        {
+          content: "名称4"
+        },
+        {
+          content: "名称5"
+        },
+        {
+          content: "名称6"
         }
       ]
-    };
+
+      this.list.data = apiResponseData;
+      this.list.total = this.list.data.length
+
+      this.list.displayedData = this.list.data.slice((this.list.page - 1) * this.list.pageSize,
+            this.list.page * this.list.pageSize)
   }
 };
 </script>
