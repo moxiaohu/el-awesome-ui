@@ -1,6 +1,6 @@
 <template>
   <div>
-   <ela-board :structure="structure" :data="data"></ela-board>
+    <ela-board :structure="structure" :data="data"></ela-board>
   </div>
 </template>
 
@@ -8,8 +8,7 @@
 export default {
   name: "ElaBoardExamples",
   components: {},
-  methods: {
-  },
+  methods: {},
   data() {
     return {
       structure: [
@@ -33,16 +32,32 @@ export default {
           config: {
             key: "area"
           }
+        },
+        {
+          type: "text",
+          label: "爱好",
+          config: {
+            key: "hobby"
+          }
+        },
+        {
+          type: "text",
+          label: "座右铭",
+          config: {
+            key: "motto"
+          }
         }
       ],
       data: {
-        name: "小虎",
+        name: "小猪",
         age: "18",
-        area: "江苏"
+        area: "上海",
+        hobby: "dota",
+        motto:"热的和狗一样"
       }
     };
   },
-   mounted() {}
+  mounted() {}
 };
 </script>
 
