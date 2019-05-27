@@ -41,6 +41,9 @@ export default {
     return {
       structure: [
         {
+          key: "content"
+        },
+        {
           type: "text",
           label: "内容",
           key: "content"

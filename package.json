@@ -1,7 +1,7 @@
 {
   "name": "el-awesome-ui",
   "description": "ui components based on element-ui",
-  "version": "0.2.0",
+  "version": "0.2.4",
   "license": "MIT",
   "private": false,
   "main": "lib/el-awesome-ui.common.js",

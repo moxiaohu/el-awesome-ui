@@ -29,7 +29,7 @@ export default {
   name: "ela-table",
   props: {
     dataList: { type: Array, required: false, default: null },
-    structure: { type: Array, required: false, default: [] }
+    structure: { type: Array, required: false, default: function () { return [] } }
   },
   watch: {
     // To make code simple, show key in data object if it is not mentioned in this.structure, 
