@@ -43,9 +43,7 @@ export default {
         {
           type: "text",
           label: "内容",
-          config: {
-            key: "content"
-          }
+          key: "content"
         },
         {
           type: "button",
@@ -71,8 +69,8 @@ export default {
           type: "img",
           label: "Web img/gif",
           colWidth: 150,
+          key: "webIcon1",
           config: {
-            key: "webIcon1",
             style: {
               width: "80px",
               height: "80px",
@@ -84,8 +82,8 @@ export default {
           type: "img",
           label: "Local Icon",
           colWidth: 150,
+          key: "localIcon1",
           config: {
-            key: "localIcon1",
             style: {
               width: "50px",
               height: "50px",
@@ -103,15 +101,17 @@ export default {
       }
     };
   },
-  mounted() {
+  async mounted() {
+    // get data
     const apiResponseData = [
       {
         content: "这个是第一行数据的内容",
-        icon: "https://cdn2.thecatapi.com/images/21g.gif"
+        icon: "https://cdn2.thecatapi.com/images/21g.gif",
       },
       {
         content: "这个是第二行数据的内容",
-        icon: "https://cdn2.thecatapi.com/images/3k4.gif"
+        icon: "https://cdn2.thecatapi.com/images/3k4.gif",
+        heihei: "https://cdn2.thecatapi.com/images/3k4.gif"
       },
       {
         content: "这个是第三行数据的内容",
@@ -131,9 +131,11 @@ export default {
       }
     ];
 
-    this.list.data = apiResponseData.map(item => {
+    
+    this.list.data = await apiResponseData.map(item => {
       // set web icon
       item.webIcon1 = item.icon;
+      delete item.icon
 
       // set local icon
       item.localIcon1 = require("../assets/logo.png");
