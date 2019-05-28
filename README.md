@@ -4,38 +4,43 @@ Flexible UI components based on [element-ui](https://element.eleme.io)
 
   
 ## Components
-### ela-table
-Table component based on **el-table**
-render table with pre-defined structure, see [example](src/components/ElaTableExamples.vue)
+- ela-table
+- ela-board
+
+### ELA-TABLE
+- Show automatically given list objects into a table with or without pre-defined structure
+- Table component based on [el-table](https://element.eleme.io/#/en-US/component/table), how to use? see [example](src/components/ElaTableExamples.vue)
 
 ![example-screenshot](/src/assets/example-ela-table.png)
+Structure is a list of column schema, types of schema:
+- text
+- img (gif is allowed)
+- button
 
-#### structures types example:
+> **_NOTE:_**  By default, type is "text", label will take value of "key", even if structure === [], ```ela-table``` will automatically show all keys and values of given data list in el-table
 
-##### text example
+#### Structures fields:
+
+- ```type``` column schema type
+- ```label``` is the label of this column
+- ```key``` is the field in object
+
+#### Text example
 ```
 {
           type: "text",
-          label: "内容",
-          key: "content"
+          label: "Name",
+          key: "name"
 }
 ```
-
-- ```label``` is the label of this column
-- ```content``` is the name of field in each object of dataList
-
+Simple version (type is by default "text", label is same as key):
 ```
 {
           key: "content",
 }
 ```
-by default , type will be "text" if not given, label will be key if not given
 
-##### No structures provided
-
-if (structures === [] | null) , ela-table will show all keys and values in table with key as column label
-
-##### Image example
+#### Image example
 
 ```
 {
@@ -53,7 +58,7 @@ if (structures === [] | null) , ela-table will show all keys and values in table
 },
 ```
 
-##### Button example
+#### Button example
 
 ```
 {
@@ -68,9 +73,9 @@ if (structures === [] | null) , ela-table will show all keys and values in table
 }
 ```
 
-- ```action``` used to handle click event
+- ```action``` used to handle click event, see how to implement in [example](src/components/ElaTableExamples.vue)
 
-### ela-board
+### ELA-BOARD
 Board that show key and value of given object  pre-defined structure,see [example](src/components/ElaBoardExamples.vue)
 
 ![example-screenshot](/src/assets/example-ela-board.png)
@@ -82,7 +87,19 @@ Board that show key and value of given object  pre-defined structure,see [exampl
 npm install el-awesome-ui
 
 ```
+or
 
-Usage is similar to [element-ui](https://element.eleme.io)
+```
 
-Vue.use(...)
+yarn add el-awesome-ui
+
+```
+
+#### How to import ? 
+Same way as [element-ui](https://element.eleme.io)
+
+```
+import ElAwesomeUI from 'el-awesome-ui'
+
+Vue.use(ElAwesomeUI)
+```
