@@ -80,7 +80,16 @@ Board that show key and value of given object  pre-defined structure,see [exampl
 
 ![example-screenshot](/src/assets/example-ela-board.png)
 
-## Install to your project 
+
+## Run code on Localhost
+
+```
+yarn
+
+yarn serve
+```
+
+## Install to your project
 
 ```
 
@@ -95,8 +104,10 @@ yarn add el-awesome-ui
 
 ```
 
-#### How to import ? 
+#### Config in your project 
 Same way as [element-ui](https://element.eleme.io)
+
+e.g
 
 ```
 import ElAwesomeUI from 'el-awesome-ui'
